@@ -15,11 +15,12 @@
 #
 
 # inherit from the proprietary version
+# TODO: Add Vendor Files
 -include vendor/lenovo/sisley2OFRL/BoardConfigVendor.mk
 
 LOCAL_PATH := device/lenovo/sisley2OFRL
  
-MTK_K64_SUPPORT := yes
+MTK_K64_SUPPORT := no
 
 # Platform
 TARGET_BOARD_PLATFORM := mt6752
@@ -74,15 +75,15 @@ TARGET_CPU_ABI_LIST_64_BIT := arm64-v8a
 TARGET_SUPPORTS_32_BIT_APPS := true
 TARGET_SUPPORTS_64_BIT_APPS := true
 BOARD_KERNEL_OFFSET := 0x00080000
-BOARD_KERNEL_IMAGE_NAME := Image.gz
+# BOARD_KERNEL_IMAGE_NAME := Image.gz
 endif
 TARGET_CPU_CORTEX_A53 := true
 ARCH_ARM_HAVE_TLS_REGISTER := true
 TARGET_CPU_SMP := true
 
-BOARD_RAMDISK_OFFSET := 0x04000000
-BOARD_TAGS_OFFSET := 0xE000000
-BOARD_KERNEL_BASE := 0x40000000
+BOARD_RAMDISK_OFFSET := 0x03f88000
+BOARD_TAGS_OFFSET := 0x0df88000
+BOARD_KERNEL_BASE := 0x40078000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_MKBOOTIMG_ARGS := --kernel_offset $(BOARD_KERNEL_OFFSET) --ramdisk_offset $(BOARD_RAMDISK_OFFSET) --tags_offset $(BOARD_TAGS_OFFSET)
 BOARD_FLASH_BLOCK_SIZE := 131072
@@ -90,12 +91,12 @@ TARGET_KMODULES := true
 
 # Kernel
 BOARD_CUSTOM_BOOTIMG_MK := $(LOCAL_PATH)/bootimg/bootimg.mk
-TARGET_KERNEL_CONFIG := aio_otfp_m_defconfig
-TARGET_KERNEL_SOURCE := kernel/lenovo/aio_otfp_m
+TARGET_KERNEL_CONFIG := sisley2OFRL_defconfig
+TARGET_KERNEL_SOURCE := kernel/lenovo/sisley2OFRL
 TARGET_MTK_KERNEL := true
 
 # recovery
-TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/class/android_usb/android0/f_mass_storage/lun/file"
+TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/devices/virtual/android_usb/android0/f_mass_storage/lun%d/file"
 BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_RECOVERY_SWIPE := true
 BOARD_SUPPRESS_EMMC_WIPE := true
@@ -216,8 +217,9 @@ TARGET_SYSTEM_PROP := $(LOCAL_PATH)/system.prop
 TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/include
 
 # Hack for build
-TARGET_BLOBS_BYPASS_SYMBOL_ERR := true
+#TARGET_BLOBS_BYPASS_SYMBOL_ERR := true
 
 # Hardware SEPolicy
+# TODO:Add Sepolicy files 
 BOARD_SEPOLICY_DIRS += \
-    device/lenovo/aio_otfp_m/sepolicy
+    device/lenovo/sisley2OFRL/sepolicy
