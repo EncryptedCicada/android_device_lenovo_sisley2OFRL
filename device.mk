@@ -17,8 +17,7 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
 # call the proprietary setup
-# TODO: Add vendor files
-$(call inherit-product, vendor/lenovo/aio_otfp_m/aio_otfp_m-vendor.mk)
+$(call inherit-product, vendor/lenovo/sisley2OFRL/sisley2OFRL-vendor.mk)
 
 # The gps config appropriate for this device
 $(call inherit-product, device/common/gps/gps_as_supl.mk)

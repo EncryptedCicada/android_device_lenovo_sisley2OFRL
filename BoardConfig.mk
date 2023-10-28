@@ -15,7 +15,6 @@
 #
 
 # inherit from the proprietary version
-# TODO: Add Vendor Files
 -include vendor/lenovo/sisley2OFRL/BoardConfigVendor.mk
 
 LOCAL_PATH := device/lenovo/sisley2OFRL
