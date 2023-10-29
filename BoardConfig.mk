@@ -95,17 +95,12 @@ TARGET_KERNEL_CONFIG := sisley2OFRL_defconfig
 TARGET_KERNEL_SOURCE := kernel/lenovo/sisley2OFRL
 TARGET_MTK_KERNEL := true
 
-# recovery
-TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/class/android_usb/android0/f_mass_storage/lun/file"
-BOARD_HAS_NO_SELECT_BUTTON := true
-BOARD_RECOVERY_SWIPE := true
-BOARD_SUPPRESS_EMMC_WIPE := true
-BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_15x24.h\"
-TARGET_RECOVERY_PIXEL_FORMAT := "RGBA_8888"
-BOARD_USES_FULL_RECOVERY_IMAGE := true
+# Use to switch to twrp
+# RECOVERY_VARIANT := twrp
+
 
 # TWRP
-RECOVERY_VARIANT := twrp
+ifeq ($(RECOVERY_VARIANT), twrp)
 TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/recovery.fstab
 TARGET_PREBUILT_RECOVERY_KERNEL := $(LOCAL_PATH)/kernel
 HAVE_SELINUX := true
@@ -121,6 +116,17 @@ TW_DEFAULT_EXTERNAL_STORAGE := true
 TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
 TW_MAX_BRIGHTNESS := 255
 TW_CUSTOM_CPU_TEMP_PATH := /sys/devices/virtual/thermal/thermal_zone1/temp
+else
+# Lineage Recovery
+TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/class/android_usb/android0/f_mass_storage/lun/file"
+BOARD_HAS_NO_SELECT_BUTTON := true
+BOARD_RECOVERY_SWIPE := true
+BOARD_SUPPRESS_EMMC_WIPE := true
+BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_15x24.h\"
+TARGET_RECOVERY_PIXEL_FORMAT := "RGBA_8888"
+BOARD_USES_FULL_RECOVERY_IMAGE := true
+endif
+
 
 # Disable memcpy opt (for audio libraries)
 TARGET_CPU_MEMCPY_OPT_DISABLE := true
