@@ -19,7 +19,7 @@
 
 LOCAL_PATH := device/lenovo/sisley2OFRL
  
-MTK_K64_SUPPORT := no
+MTK_K64_SUPPORT := yes
 
 # Platform
 TARGET_BOARD_PLATFORM := mt6752
