@@ -29,7 +29,7 @@ PRODUCT_AAPT_CONFIG := normal xhdpi xxhdpi
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
 # Recovery allowed devices
-TARGET_OTA_ASSERT_DEVICE := S1a40,sisley2OFRL,VibeS1
+TARGET_OTA_ASSERT_DEVICE := sisley2OFRL,S1a40,VibeS1
 
 # Audio policy & codec
 PRODUCT_COPY_FILES += \

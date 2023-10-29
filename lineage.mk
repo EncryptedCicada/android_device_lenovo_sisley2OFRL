@@ -13,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-TARGET_BOOTANIMATION_SIZE := 1080x720
 
 # Inherit from AOSP 64-bit support
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
@@ -35,14 +34,9 @@ $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 $(call inherit-product, device/lenovo/sisley2OFRL/device.mk)
 
 # Discard inherited values and use our own instead.
+PRODUCT_DEVICE := sisley2OFRL
 PRODUCT_NAME := lineage_sisley2OFRL
-PRODUCT_DEVICE := S1a40
 PRODUCT_BRAND := Lenovo
 PRODUCT_MODEL := Lenovo S1a40
 PRODUCT_MANUFACTURER := Lenovo
 PRODUCT_RESTRICT_VENDOR_FILES := false
-
-# Boot animation
-TARGET_SCREEN_HEIGHT      := 1920
-TARGET_SCREEN_WIDTH       := 1080
-TARGET_BOOTANIMATION_NAME := 1080
