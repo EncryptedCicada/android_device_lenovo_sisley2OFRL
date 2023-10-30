@@ -1,0 +1,20 @@
+[
+  {
+    "remote": "github",
+    "repository": "EncryptedCicada/android_vendor_lenovo_sisley2OFRL",
+    "target_path": "vendor/lenovo/sisley2OFRL",
+    "branch": "cm-13.0"
+  },
+  {
+    "remote": "github",
+    "repository": "EncryptedCicada/android_vendor_mediatek",
+    "target_path": "vendor/mediatek",
+    "branch": "cm-13.0"
+  },
+  {
+    "remote": "github",
+    "repository": "EncryptedCicada/android_kernel_lenovo_sisley2OFRL",
+    "target_path": "kernel/lenovo/sisley2OFRL",
+    "branch": "cm-13.0"
+  }
+]
